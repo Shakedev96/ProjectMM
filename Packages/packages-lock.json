@@ -18,7 +18,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.burst": {
-      "version": "1.8.16",
+      "version": "1.8.17",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -28,7 +28,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.cinemachine": {
-      "version": "2.10.0",
+      "version": "2.10.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -57,7 +57,7 @@
       "dependencies": {
         "com.unity.animation.rigging": "1.2.1",
         "com.unity.timeline": "1.7.6",
-        "com.unity.cinemachine": "2.10.0",
+        "com.unity.cinemachine": "2.10.1",
         "com.unity.formats.fbx": "4.2.1"
       }
     },
@@ -66,7 +66,7 @@
       "depth": 0,
       "source": "builtin",
       "dependencies": {
-        "com.unity.cinemachine": "2.10.0",
+        "com.unity.cinemachine": "2.10.1",
         "com.unity.timeline": "1.7.6",
         "com.unity.visualscripting": "1.9.4"
       }
@@ -77,9 +77,9 @@
       "source": "builtin",
       "dependencies": {
         "com.unity.probuilder": "5.2.2",
-        "com.unity.polybrush": "1.1.6",
+        "com.unity.polybrush": "1.1.8",
         "com.unity.formats.fbx": "4.2.1",
-        "com.unity.terrain-tools": "5.0.1"
+        "com.unity.terrain-tools": "5.0.5"
       }
     },
     "com.unity.formats.fbx": {
@@ -93,7 +93,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
-      "version": "3.0.28",
+      "version": "3.0.31",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -125,7 +125,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.polybrush": {
-      "version": "1.1.6",
+      "version": "1.1.8",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -199,7 +199,7 @@
       }
     },
     "com.unity.terrain-tools": {
-      "version": "5.0.1",
+      "version": "5.0.5",
       "depth": 1,
       "source": "registry",
       "dependencies": {
