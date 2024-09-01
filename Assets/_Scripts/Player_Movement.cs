@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
-    public float moveSpeed ;
+    public float moveSpeed;
     public float normal_speed;
     public float sprint;
     //public float jumpForce ; 
     //public bool isGrounded;
     private Transform cameraTransform;
+
+    public Animator anim;
 
     private Rigidbody rb;
     float moveHorizontal;
@@ -19,26 +21,26 @@ public class Player_Movement : MonoBehaviour
 
     void Start()
     {
-       
+
         rb = GetComponent<Rigidbody>();
         cameraTransform = Camera.main.transform;
     }
 
     void Update()
     {
-       
-        HandleMovement();
 
+        HandleMovement();
+        pistolmechaninc();
 
     }
 
     void HandleMovement()
     {
-        if(Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             moveSpeed = sprint;
         }
-        if(Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             moveSpeed = normal_speed;
         }
@@ -65,19 +67,40 @@ public class Player_Movement : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, 720 * Time.deltaTime);
         }
 
-        //if (Input.GetButtonDown("Jump") && isGrounded)
-        //{
-        //    rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        //    isGrounded = false; // Set to false until the player lands back
-        //}
+        if (moveVertical > 0 || moveHorizontal > 0)
+        {
+            anim.SetFloat("walkingfwd", 0); // Forward movement
+            anim.SetFloat("walkingback", 1);
+        }
+        else if (moveVertical < 0 || moveHorizontal < 0)
+        {
+            anim.SetFloat("walkingfwd", 0);
+            anim.SetFloat("walkingback", 1); // Backward movement
+        }
+        else
+        {
+            //  anim.SetFloat("walkingfwd", 0);
+            anim.SetFloat("walkingback", 0);
+        }
+
+       
     }
 
-    
-//    private void OnCollisionEnter(Collision collision)
-//    {
-//        if (collision.gameObject.CompareTag("Ground"))
-//        {
-//            isGrounded = true;
-//        }
-//    }
+    void pistolmechaninc()
+    {
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            anim.SetBool("draw_pistol", true);
+            StartCoroutine(pistolsettingfalse());
+        }
+    }
+    IEnumerator pistolsettingfalse()
+    {
+
+        yield return new WaitForSeconds(0.7f);
+        anim.SetBool("draw_pistol", false);
+    }
+
+
+   
 }
